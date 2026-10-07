@@ -18,8 +18,8 @@ Não há percentual de economia garantido: carregar uma skill também consome to
 Requer Git e Python 3. Instala para o usuário em `~/.agents/skills`; use `--dest .agents/skills` na raiz do projeto para instalar só nesse projeto. O instalador recusa sobrescrever skills existentes.
 
 ```bash
-git clone https://github.com/rxdx011/codex-token-saving-skills.git
-cd codex-token-saving-skills
+git clone https://github.com/rxdx011/Codex-Skil.git
+cd Codex-Skil
 python3 scripts/validate.py
 python3 scripts/install.py --skill context-efficient
 # Ou instalar todas:
