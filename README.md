@@ -12,6 +12,28 @@ Não há percentual de economia garantido: carregar uma skill também consome to
 | `focused-change` | Implementar uma alteração delimitada com pouco retrabalho. |
 | `targeted-validation` | Escolher verificações proporcionais à mudança. |
 | `compact-handoff` | Registrar o estado de uma tarefa longa sem repetir o histórico. |
+| `roblox-project-setup` | Organizar um projeto Roblox com Rojo, Wally e Luau. |
+| `roblox-luau-scripting` | Escrever ou revisar scripts Luau para servidor, cliente e ModuleScripts. |
+| `roblox-remote-security` | Criar ou revisar RemoteEvents e RemoteFunctions com autoridade no servidor. |
+| `roblox-data-persistence` | Salvar dados de jogadores com DataStoreService, sessões e autosave. |
+| `roblox-ui` | Construir interfaces (GUI) que funcionem em PC, celular e console. |
+| `roblox-validation` | Escolher e rodar verificações (formatação, lint, tipos, build) antes de concluir. |
+
+## Skills para Roblox no Claude Code
+
+As skills `roblox-*` seguem o mesmo formato `SKILL.md`. Para o Claude Code, instale-as na pasta de skills do projeto ou do usuário:
+
+```bash
+# Só neste projeto
+python3 scripts/install.py --dest .claude/skills --skill roblox-project-setup --skill roblox-luau-scripting --skill roblox-remote-security --skill roblox-data-persistence --skill roblox-ui --skill roblox-validation
+
+# Para todos os seus projetos
+python3 scripts/install.py --dest ~/.claude/skills --skill roblox-project-setup --skill roblox-luau-scripting --skill roblox-remote-security --skill roblox-data-persistence --skill roblox-ui --skill roblox-validation
+```
+
+Inicie uma nova sessão do Claude Code depois de instalar. As skills são sugeridas automaticamente pela descrição; você também pode pedir explicitamente, por exemplo: `Use a skill roblox-remote-security para revisar este RemoteEvent.`
+
+Os guias assumem um projeto Rojo + Wally + Luau. O Claude Code consegue editar o código e rodar `rojo build`, `stylua`, `selene` e similares, mas não abre o Roblox Studio: testes de jogo, multiplayer e DataStore precisam ser feitos por você no Studio.
 
 ## Instalação
 
