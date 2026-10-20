@@ -18,6 +18,7 @@ Não há percentual de economia garantido: carregar uma skill também consome to
 | `roblox-data-persistence` | Salvar dados de jogadores com DataStoreService, sessões e autosave. |
 | `roblox-ui` | Construir interfaces (GUI) que funcionem em PC, celular e console. |
 | `roblox-validation` | Escolher e rodar verificações (formatação, lint, tipos, build) antes de concluir. |
+| `figcraft-design` | Criar telas e protótipos de interface com o editor FigCraft via MCP, como alternativa ao Figma. |
 
 ## Skills para Roblox no Claude Code
 
@@ -34,6 +35,16 @@ python3 scripts/install.py --dest ~/.claude/skills --skill roblox-project-setup 
 Inicie uma nova sessão do Claude Code depois de instalar. As skills são sugeridas automaticamente pela descrição; você também pode pedir explicitamente, por exemplo: `Use a skill roblox-remote-security para revisar este RemoteEvent.`
 
 Os guias assumem um projeto Rojo + Wally + Luau. O Claude Code consegue editar o código e rodar `rojo build`, `stylua`, `selene` e similares, mas não abre o Roblox Studio: testes de jogo, multiplayer e DataStore precisam ser feitos por você no Studio.
+
+## FigCraft como alternativa ao Figma
+
+A skill `figcraft-design` usa o servidor MCP do [FigCraft](https://github.com/storytold/figcraft), um editor de design open source que funciona offline. O projeto está em alfa e ainda não foi testado com arquivos reais do Figma. Instalar exige compilar o FigCraft (Rust) ou usar um binário pronto; depois, registre o servidor no Claude Code:
+
+```bash
+claude mcp add figcraft -- /caminho/para/figcraft-cli mcp
+```
+
+No app Claude Desktop, adicione o mesmo comando em Settings > Developer > Edit Config, conforme `docs/mcp.md` do FigCraft.
 
 ## Instalação
 
