@@ -57,8 +57,14 @@ const problemas = await pg.evaluate(() => {
 console.log(problemas.join('\n') || 'OK');
 
 await pg.pdf({ path: path.join(dir, 'banner-250x200cm.pdf'), width: '250cm', height: '200cm', printBackground: true, pageRanges: '1' });
-const pv = await b.newPage({ viewport: { width: W, height: H }, deviceScaleFactor: 2500 / W });
-await pv.goto(url); await pv.waitForLoadState('load'); await pv.waitForTimeout(500);
-await pv.screenshot({ path: path.join(dir, 'banner-celular.png') });
-await pv.screenshot({ path: path.join(dir, 'banner-celular.jpg'), type: 'jpeg', quality: 92 });
+// Imagens: celular leve (2500 px), JPG de alta qualidade (5000 px) e PNG máximo (7500 px)
+async function foto(largura, arquivos) {
+  const p = await b.newPage({ viewport: { width: W, height: H }, deviceScaleFactor: largura / W });
+  await p.goto(url); await p.waitForLoadState('load'); await p.waitForTimeout(500);
+  for (const [nome, opt] of arquivos) await p.screenshot({ path: path.join(dir, nome), ...opt });
+  await p.close();
+}
+await foto(2500, [['banner-celular.jpg', { type: 'jpeg', quality: 92 }]]);
+await foto(5000, [['banner-alta-qualidade.jpg', { type: 'jpeg', quality: 97 }]]);
+await foto(7500, [['banner-maxima.png', {}]]);
 await b.close();
