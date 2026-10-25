@@ -18,6 +18,7 @@ Não há percentual de economia garantido: carregar uma skill também consome to
 | `roblox-data-persistence` | Salvar dados de jogadores com DataStoreService, sessões e autosave. |
 | `roblox-ui` | Construir interfaces (GUI) que funcionem em PC, celular e console. |
 | `roblox-validation` | Escolher e rodar verificações (formatação, lint, tipos, build) antes de concluir. |
+| `roblox-game-growth` | Planejar onboarding, retenção, jogo com amigos, página da loja e atualizações para melhorar a descoberta. |
 | `figcraft-design` | Criar telas e protótipos de interface com o editor FigCraft via MCP, como alternativa ao Figma. |
 
 ## Skills para Roblox no Claude Code
@@ -26,10 +27,10 @@ As skills `roblox-*` seguem o mesmo formato `SKILL.md`. Para o Claude Code, inst
 
 ```bash
 # Só neste projeto
-python3 scripts/install.py --dest .claude/skills --skill roblox-project-setup --skill roblox-luau-scripting --skill roblox-remote-security --skill roblox-data-persistence --skill roblox-ui --skill roblox-validation
+python3 scripts/install.py --dest .claude/skills --skill roblox-project-setup --skill roblox-luau-scripting --skill roblox-remote-security --skill roblox-data-persistence --skill roblox-ui --skill roblox-validation --skill roblox-game-growth
 
 # Para todos os seus projetos
-python3 scripts/install.py --dest ~/.claude/skills --skill roblox-project-setup --skill roblox-luau-scripting --skill roblox-remote-security --skill roblox-data-persistence --skill roblox-ui --skill roblox-validation
+python3 scripts/install.py --dest ~/.claude/skills --skill roblox-project-setup --skill roblox-luau-scripting --skill roblox-remote-security --skill roblox-data-persistence --skill roblox-ui --skill roblox-validation --skill roblox-game-growth
 ```
 
 Inicie uma nova sessão do Claude Code depois de instalar. As skills são sugeridas automaticamente pela descrição; você também pode pedir explicitamente, por exemplo: `Use a skill roblox-remote-security para revisar este RemoteEvent.`
